@@ -1,4 +1,4 @@
-Shader "Custom/Variable"
+Shader "Custom/Variable2"
 {
     Properties
     {
@@ -29,12 +29,15 @@ Shader "Custom/Variable"
         half _Glossiness;
         half _Metallic;
         fixed4 _Color;
-        float4 test;
+
         void surf (Input IN, inout SurfaceOutputStandard o)
         {
-            test = float4(1,0,0,1);
+            float r = 1;
+            float2 gg = float2(0.5, 0);
+            float3 bbb = float3(1,0,1);
+
             fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color;
-            o.Albedo = test.rgb;
+            o.Albedo = float3(bbb.b,gg.r,r.r);
             o.Alpha = c.a;
         }
         ENDCG
