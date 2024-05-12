@@ -1,16 +1,11 @@
-Shader "ShaderStudy/Test/Chapter1/TestShader"
+Shader "Custom/Variable"
 {
     Properties
     {
         _Color ("Color", Color) = (1,1,1,1)
-        _TestFloat ("TestFloat", Float) = 0.5
-        _TestColor ("TestColor", Color) = (1,1,1,1)
-        _TestVector ("TestVector", Vector) = (1,1,1,1)
-        _TestTexture ("TestTexture", 2D) = "white" {}
         _MainTex ("Albedo (RGB)", 2D) = "white" {}
         _Glossiness ("Smoothness", Range(0,1)) = 0.5
         _Metallic ("Metallic", Range(0,1)) = 0.0
-        _Name ("display name", Range (0,1)) = 0.0
     }
     SubShader
     {
@@ -39,8 +34,7 @@ Shader "ShaderStudy/Test/Chapter1/TestShader"
         {
             float4 test = float4(1,0,0,1);
             fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color;
-            
-            o.Emission = float3(0.5,0.5,0.5) * float3(0.5,0.5,0.5);
+            o.Albedo = test.grb;
             o.Alpha = c.a;
         }
         ENDCG
