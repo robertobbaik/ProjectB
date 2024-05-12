@@ -8,7 +8,11 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: New Material
+<<<<<<< Updated upstream
   m_Shader: {fileID: 4800000, guid: 7a41af8a747bf4bdea6f9d22fd9ec3bf, type: 3}
+=======
+  m_Shader: {fileID: 4800000, guid: 777ea5a51857afe4a8e5257abeb10718, type: 3}
+>>>>>>> Stashed changes
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
