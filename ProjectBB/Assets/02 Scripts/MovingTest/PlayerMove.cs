@@ -46,7 +46,7 @@ public class PlayerMove : MonoBehaviour
     {
         if (dir != Vector3.zero)
         {
-            // Áö±Ý ¹Ù¶óº¸´Â ¹æÇâÀÇ ºÎÈ£ != ³ª¾Æ°¥ ¹æÇâ ºÎÈ£
+            // ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¶óº¸´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£ != ï¿½ï¿½ï¿½Æ°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£
             if (Mathf.Sign(transform.forward.x) != Mathf.Sign(dir.x) || Mathf.Sign(transform.forward.z) != Mathf.Sign(dir.z))
             {
                 transform.Rotate(0, 1, 0);
