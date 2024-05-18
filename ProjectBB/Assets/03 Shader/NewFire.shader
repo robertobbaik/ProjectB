@@ -4,6 +4,8 @@ Shader "Custom/NewFire"
     {
         _MainTex ("Albedo (RGB)", 2D) = "white" {}
         _MainTex2 ("Albedo (RGB)", 2D) = "white" {}
+
+        _Brigtness ("Brightness", Range(0,1)) = 0
     }
     SubShader
     {
@@ -17,6 +19,7 @@ Shader "Custom/NewFire"
 
         sampler2D _MainTex;
         sampler2D _MainTex2;
+        float _Brigtness;
 
         struct Input
         {
@@ -26,9 +29,9 @@ Shader "Custom/NewFire"
 
         void surf (Input IN, inout SurfaceOutputStandard o)
         {
-            fixed4 c = tex2D (_MainTex, IN.uv_MainTex);
-            //fixed4 d = tex2D (_MainTex2, float2(IN.uv_MainTex2.x, IN.uv_MainTex2.y - _Time.y));
-            fixed4 d = tex2D (_MainTex2, IN.uv_MainTex2);
+            fixed4 d = tex2D (_MainTex2, float2(IN.uv_MainTex2.x, IN.uv_MainTex2.y - _Time.y) * _Brigtness);
+            fixed4 c = tex2D (_MainTex, IN.uv_MainTex + d.r);
+
             o.Emission = c.rgb;// * d.rgb;
             o.Alpha = c.a;// * d.a;
         }
