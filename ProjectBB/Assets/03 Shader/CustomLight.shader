@@ -31,9 +31,8 @@ Shader "Custom/CustomLight"
         float4 LightingTest (SurfaceOutput s, float lightDir, float atten)
         {
             float ndot1 = dot(s.Normal, lightDir) * 0.5 + 0.5;
-            return pow(ndot1,3);
+            return ndot1;
         }
-
         ENDCG
     }
     FallBack "Diffuse"
