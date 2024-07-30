@@ -15,7 +15,6 @@ namespace Character.Move
         private void Start()
         {
             moveSpeed = 5.0f;
-            characterController = GetComponent<CharacterController>();
             animator = GetComponent<Animator>();
         }
 
