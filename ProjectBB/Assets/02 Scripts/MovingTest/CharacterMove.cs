@@ -24,6 +24,13 @@ namespace Character.Move
             float y = Input.GetAxis("Vertical");
 
             Vector3 moveDirection = new(x, 0, y);
+
+            float a = moveDirection.sqrMagnitude;
+
+            if (!Mathf.Approximately(a, 0))
+            {
+                transform.rotation = Quaternion.LookRotation(moveDirection);
+            }
             
             characterController.SimpleMove(moveDirection * moveSpeed);
         }
