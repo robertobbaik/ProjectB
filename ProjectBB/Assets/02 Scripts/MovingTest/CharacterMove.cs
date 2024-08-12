@@ -25,9 +25,9 @@ namespace Character.Move
 
             Vector3 moveDirection = new(x, 0, y);
 
-            float a = moveDirection.sqrMagnitude;
+            float a = moveDirection.magnitude;
 
-            if (!Mathf.Approximately(a, 0))
+            if (a != 0)
             {
                 transform.rotation = Quaternion.LookRotation(moveDirection);
             }
