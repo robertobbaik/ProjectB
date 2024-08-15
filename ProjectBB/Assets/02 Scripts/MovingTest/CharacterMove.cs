@@ -12,7 +12,7 @@ namespace Character.Move
         public float moveSpeed;
         private static readonly int Move = Animator.StringToHash("move");
 
-        private void Start()
+        void Start()
         {
             moveSpeed = 5.0f;
             animator = GetComponent<Animator>();
